@@ -1,0 +1,46 @@
+{
+    "name": "webdriverio-tests",
+    "version": "0.1.0",
+    "author": "Baji, Jaffar",
+    "private": true,
+    "devDependencies": {
+        "@alfresco/js-api": "^4.3.0",
+        "@wdio/allure-reporter": "^8.3.5",
+        "@wdio/cli": "^8.3.3",
+        "@wdio/jasmine-framework": "^8.3.5",
+        "@wdio/local-runner": "^8.3.3",
+        "@wdio/mocha-framework": "^8.3.0",
+        "@wdio/sauce-service": "^8.3.9",
+        "@wdio/selenium-standalone-service": "^8.3.2",
+        "@wdio/spec-reporter": "^8.3.0",
+        "adm-zip": "^0.5.10",
+        "alfresco-js-api-node": "^4.0.0-beta1",
+        "allure-commandline": "^2.21.0",
+        "chromedriver": "^109.0.0",
+        "dd-FrameAsPackage": "^1.0.20",
+        "dotenv": "^16.0.3",
+        "wdio-chromedriver-service": "^8.0.1"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "pageobjectparametrizationtest": "npx wdio run wdio.conf.js --suite parametrization",
+        "headless": "set HEADLESS=Y&& npx wdio run wdio.conf.js --suite parametrization",
+        "browserinsttest": "npx wdio run ./wdio.conf.js --suite browserinstn",
+        "asyctesting": "npx wdio run ./wdio.conf.js --suite asyncTest",
+        "saucetest": "npx wdio run ./sauceconnwdio.conf.js --suite browserinstn",
+        "envfiletest": "npx wdio run ./wdio.conf.js --suite envTest",
+        "multienvtest": "npx wdio run ./uatEnvwdio.conf.js --suite multienvSpec",
+        "multienvtest1": "npx wdio run ./testEnvwdio.conf.js --suite multienvSpec",
+        "multienvtest2": "npx wdio run ./wdio.conf.js --suite multienvSpec",
+        "generatereport": "allure generate allure-results --clean && allure open",
+        "expect": "npx wdio run ./wdio.conf.js --suite expectTests",
+        "alfresco": "npx wdio run ./wdio.conf.js --suite alfrescoTests",
+        "zapi": "npx wdio run ./wdio.conf.js --suite zapiTests",
+        "retrytest": "npx wdio run ./wdio.conf.js --suite retryTests",
+        "wdio": "wdio run wdio.conf.js"
+    },
+    "dependencies": {
+        "deep-merge": "^1.0.0",
+        "winston": "^3.8.2"
+    }
+}
